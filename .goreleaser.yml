@@ -20,6 +20,8 @@ archive:
   name_template: '{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
   replacements:
     darwin: Darwin
+  dependencies:
+  - git
     linux: Linux
     windows: Windows
     386: i386
@@ -37,8 +39,6 @@ nfpm:
   formats:
   - deb
   - rpm
-  dependencies:
-  - git
   recommends:
   - rpm
 snapcraft:
